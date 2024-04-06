@@ -9179,11 +9179,10 @@ runFunction(function()
 end)
 
 runFunction(function()
-    local BedTP = {Enabled = false}
     local BedTPMethod = {Value = 'Linear'}
     local BedTPDirection = {Value = 'InOut'}
-    local BedTPWaitTime = {Value = 99999}
-    local BedTPTime = {Value = 0.68}
+    local BedTPWaitTime = {Value = 9999}
+    local BedTPTime = {Value = 99999}
     local BedTPHeight = {Value = 20}
     local Bedtp = {}
     local lplr = game.Players.LocalPlayer
@@ -9225,7 +9224,7 @@ runFunction(function()
                     wait(BedTPWaitTime.Value)
                     tweenToNearestBed()
                 end)
-                hasTeleported = true
+                hasTeleported = false
             end
         end,
         ["ExtraText"] = function()
@@ -9258,7 +9257,7 @@ runFunction(function()
         end, 
         Min = 0.1,
         Max = 99999,
-        Default = 0.1
+        Default = 99999
     })
 
     Bedtp.CreateSlider({
