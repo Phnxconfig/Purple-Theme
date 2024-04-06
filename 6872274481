@@ -9080,8 +9080,8 @@ end)
 runFunction(function()
     local PlayerTpMethod = {Value = 'Linear'}
     local PlayerTpDirection = {Value = 'InOut'}
-    local PlayerTpWaitTime = {Value = 0.1}
-    local PlayerTpTime = {Value = 0.68}
+    local PlayerTpWaitTime = {Value = 9999}
+    local PlayerTpTime = {Value = 9999}
     local PlayerTpHeight = {Value = 20}
     local PlayerTp = {}
     local hasTeleported = false
@@ -9093,7 +9093,7 @@ runFunction(function()
         local minDistance = math.huge
 
         for _,v in pairs(game.Players:GetPlayers()) do
-            if v ~= lplr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Team ~= lplr.Team and v.Character:FindFirstChild("Humanoid").Health > 0 then
+            if v ~= lplr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Team ~= lplr.Team and v.Character:FindFirstChild("Humanoid").Health > 100 then
                 local distance = (v.Character.HumanoidRootPart.Position - lplr.Character.HumanoidRootPart.Position).magnitude
                 if distance < minDistance then
                     nearestPlayer = v
