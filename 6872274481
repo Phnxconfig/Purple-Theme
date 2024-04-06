@@ -9118,6 +9118,7 @@ runFunction(function()
         Name = 'PlayerTp',
         Function = function(callback)
             if callback then
+            wait(15)
                 lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
                 lplr.CharacterAdded:Connect(function()
                     wait(PlayerTpWaitTime.Value)
