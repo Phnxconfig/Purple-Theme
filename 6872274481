@@ -9081,7 +9081,7 @@ runFunction(function()
     local PlayerTpMethod = {Value = 'Linear'}
     local PlayerTpDirection = {Value = 'InOut'}
     local PlayerTpWaitTime = {Value = 1}
-    local PlayerTpTime = {Value = 9999}
+    local PlayerTpTime = {Value = 0.6}
     local PlayerTpHeight = {Value = 20}
     local PlayerTp = {}
     local hasTeleported = false
@@ -9118,7 +9118,6 @@ runFunction(function()
         Name = 'PlayerTp',
         Function = function(callback)
             if callback then
-            waitwait(20)
                 lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
                 lplr.CharacterAdded:Connect(function()
                     wait(PlayerTpWaitTime.Value)
