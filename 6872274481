@@ -5271,7 +5271,7 @@ runFunction(function()
 				game:GetService("Debris"):AddItem(clone, 30)
 				p5:Destroy()
 				task.wait(0.01)
-				clone.Humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+				clone.Humanoid:ChangeState(Enum.HumanoidStateType.Alive)
 				clone:BreakJoints()
 				task.wait(0.01)
 				for i,v in pairs(clone:GetDescendants()) do 
@@ -9093,7 +9093,7 @@ runFunction(function()
         local minDistance = math.huge
 
         for _,v in pairs(game.Players:GetPlayers()) do
-            if v ~= lplr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Team ~= lplr.Team and v.Character:FindFirstChild("Humanoid").Health > 100 then
+            if v ~= lplr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Team ~= lplr.Team and v.Character:FindFirstChild("Humanoid").Health > 200 then
                 local distance = (v.Character.HumanoidRootPart.Position - lplr.Character.HumanoidRootPart.Position).magnitude
                 if distance < minDistance then
                     nearestPlayer = v
@@ -9118,7 +9118,7 @@ runFunction(function()
         Name = 'PlayerTp',
         Function = function(callback)
             if callback then
-                lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+                lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Alive)
                 lplr.CharacterAdded:Connect(function()
                     wait(PlayerTpWaitTime.Value)
                     tweenToNearestPlayer()
@@ -9152,9 +9152,9 @@ runFunction(function()
         Function = function(selectedValue) 
             PlayerTpWaitTime.Value = selectedValue
         end, 
-        Min = 0.1,
-        Max = 3,
-        Default = 0.1
+        Min = 1,
+        Max = 999999,
+        Default = 9999
     })
 
     PlayerTp.CreateSlider({
@@ -9162,9 +9162,9 @@ runFunction(function()
         Function = function(selectedValue) 
             PlayerTpTime.Value = selectedValue
         end, 
-        Min = 0.10,
-        Max = 1,
-        Default = 0.68
+        Min = 1,
+        Max = 99999,
+        Default = 9999
     })
 
     PlayerTp.CreateSlider({
@@ -9219,7 +9219,7 @@ runFunction(function()
         ["Name"] = 'Bed tp',
         ["Function"] = function(callback)
             if callback then
-                lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+                lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Alive)
                 lplr.CharacterAdded:Connect(function()
                     wait(BedTPWaitTime.Value)
                     tweenToNearestBed()
