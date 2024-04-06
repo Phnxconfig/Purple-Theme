@@ -9080,7 +9080,7 @@ end)
 runFunction(function()
     local PlayerTpMethod = {Value = 'Linear'}
     local PlayerTpDirection = {Value = 'InOut'}
-    local PlayerTpWaitTime = {Value = 9999}
+    local PlayerTpWaitTime = {Value = 1}
     local PlayerTpTime = {Value = 9999}
     local PlayerTpHeight = {Value = 20}
     local PlayerTp = {}
